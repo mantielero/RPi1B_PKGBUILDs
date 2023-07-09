@@ -1,14 +1,25 @@
 PKGBUILDs for the Raspberry Pi 1 B
 
 
-# Create package
+
+## Create package in the RPi
 Download the PKGBUILD and:
 ```
 makepkg
 ```
 
-# Install the package
+
+## Install the package
 Example:
 ```
 sudo pacman -U node-bin-12.22.8-1-armv6h.pkg.tar.xz
 ```
+
+# Option 1
+1. Download the PKGBUILD
+2. Create the package
+3. Install the package
+
+# Option 2
+1. Download the binary package 
+2. Install it.
