@@ -1,0 +1,51 @@
+# This is an example PKGBUILD file. Use this as a start to creating your own,
+# and remove these comments. For more information, see 'man PKGBUILD'.
+# NOTE: Please fill out the license field for your package! If it is unknown,
+# then please put 'unknown'.
+# wget https://unofficial-builds.nodejs.org/download/release/v12.22.8/node-v12.22.8-linux-armv6l.tar.xz
+#tar -xf node-v12.22.8-linux-armv6l.tar.xz
+# Maintainer: Your Name <youremail@domain.com>
+_pkgname='node'
+pkgname="${_pkgname}-bin"
+pkgver="18.8.0"
+pkgrel=1
+epoch=0
+pkgdesc="Western Digital My Cloud Home FUSE file system"
+arch=('armv6l' 'armv6h')
+url="https://unofficial-builds.nodejs.org/download/release"
+license=('Apache License 2.0')
+groups=()
+depends=()
+#makedepends=(
+#go
+#)
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=("${_pkgname}")
+conflicts=("${_pkgname}")
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=("https://unofficial-builds.nodejs.org/download/release/v${pkgver}/${_pkgname}-v${pkgver}-linux-armv6l.tar.xz")
+noextract=()
+md5sums=("a78ad291d9f8e8d1698061ad61eea47c")
+validpgpkeys=()
+
+package() {
+	mkdir -p $pkgdir/usr
+        tar -xf ${_pkgname}-v${pkgver}-linux-armv6l.tar.xz -C "$pkgdir/usr" --strip-components=1
+        #strip --no-strip-debug "$pkgdir"/usr/bin/*
+        #install -Dm 755 "${_pkgname}-v{pkgver}-linux-armv6l/bin/node" "$pkgdir/usr/local/bin/"
+	#install -Dm 755 "${_pkgname}-v{pkgver}-linux-armv6l/bin/npm" "$pkgdir/usr/bin/"
+        #install -Dm 755 "${_pkgname}-v{pkgver}-linux-armv6l/bin/npx" "$pkgdir/usr/bin/"
+        #install -Dm 755 "${_pkgname}-v{pkgver}-linux-armv6l/bin/corepack" "$pkgdir/usr/bin/corepack"
+
+	#install -Dm 644 "${_pkgname}-v{pkgver}-linux-armv6l/include" "$pkgdir/usr/include/"
+	#install -Dm 644 "${_pkgname}-v{pkgver}-linux-armv6l/lib" "$pkgdir/usr/lib/"
+	#install -Dm 644 "${_pkgname}-v{pkgver}-linux-armv6l/share" "$pkgdir/usr/share"
+	#ln -s /lib/node_modules/npm/bin/npm-cli.js npm
+	
+}
